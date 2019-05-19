@@ -3,7 +3,7 @@
 #include <cmath>
 
 bool ConvexHullHighRight(const std::vector<std::pair<double, double>>& inputpoints, size_t& index, std::vector<size_t>& convexhull) {
-    double E = 1.e-5;
+    double E = 1e-5;
     std::vector<size_t> candidates;
     for (size_t i = 0; i < inputpoints.size(); i++) {
         if ((inputpoints[i].first >= inputpoints[index].first) && (inputpoints[i].second >= inputpoints[index].second) && (i != index)) candidates.push_back(i);
@@ -29,7 +29,7 @@ bool ConvexHullHighRight(const std::vector<std::pair<double, double>>& inputpoin
 }
 
 bool ConvexHullLowRight(const std::vector<std::pair<double, double>>& inputpoints, size_t& index, std::vector<size_t>& convexhull) {
-    double E = 1.e-5;
+    double E = 1e-5;
     std::vector<size_t> candidates;
     for (size_t i = 0; i < inputpoints.size(); i++) {
         if ((inputpoints[i].first >= inputpoints[index].first) && (inputpoints[i].second <= inputpoints[index].second) && (i != index)) candidates.push_back(i);
@@ -55,7 +55,7 @@ bool ConvexHullLowRight(const std::vector<std::pair<double, double>>& inputpoint
 }
 
 bool ConvexHullLowLeft(const std::vector<std::pair<double, double>>& inputpoints, size_t& index, std::vector<size_t>& convexhull) {
-    double E = 1.e-5;
+    double E = 1e-5;
     std::vector<size_t> candidates;
     for (size_t i = 0; i < inputpoints.size(); i++) {
         if ((inputpoints[i].first <= inputpoints[index].first) && (inputpoints[i].second <= inputpoints[index].second) && (i != index)) candidates.push_back(i);
@@ -81,7 +81,7 @@ bool ConvexHullLowLeft(const std::vector<std::pair<double, double>>& inputpoints
 }
 
 bool ConvexHullHighLeft(const std::vector<std::pair<double, double>>& inputpoints, size_t& index, std::vector<size_t>& convexhull) {
-    double E = 1.e-5;
+    double E = 1e-5;
     std::vector<size_t> candidates;
     for (size_t i = 0; i < inputpoints.size(); i++) {
         if ((inputpoints[i].first <= inputpoints[index].first) && (inputpoints[i].second >= inputpoints[index].second) && (i != index)) candidates.push_back(i);
@@ -107,7 +107,7 @@ bool ConvexHullHighLeft(const std::vector<std::pair<double, double>>& inputpoint
 }
 
 std::vector<size_t> FindConvexHull(const std::vector<std::pair<double, double>>& inputpoints) {
-    double E = 1.e-5;
+    double E = 1e-5;
     std::vector<size_t> convexhull;
     double xmin = inputpoints[0].first;
     size_t index = 0;
